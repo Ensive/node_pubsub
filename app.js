@@ -1,21 +1,21 @@
-(function() {
-  'use strict';
+'use strict';
 
-  var
-    express = require('express'),
-    bodyParser = require('body-parser');
+var
+  express = require('express'),
+  bodyParser = require('body-parser'),
+  badges = require('./controllers/badges');
 
-  // init our app
-  var app = express();
+// init our app
+var app = express();
 
-  // declare a middleware
-  app.use(bodyParser.json());
+// declare a middleware
+app.use(bodyParser.json());
 
-  app.post('/', function(req, res) {
-    res.send('Hello world!\n');
-  });
+app.post('/', badges.save, badges.send, function (req, res) {
+  res.send('Hello world!\n');
+  res.render('dashboard');
+});
 
-  app.listen(8000);
+app.listen(8000);
 
 
-})();

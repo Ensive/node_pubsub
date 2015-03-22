@@ -1,0 +1,27 @@
+{
+  "name": "pubsub",
+  "version": "0.0.1",
+  "description": "Node.js app for fetching  and rendering CodeSchool badges in real time",
+  "main": "app.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Ensive/soup_node.git"
+  },
+  "keywords": [
+    "nodejs",
+    "express",
+    "redis"
+  ],
+  "author": "Anton Goncharuk",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Ensive/soup_node/issues"
+  },
+  "homepage": "https://github.com/Ensive/soup_node",
+  "dependencies": {
+    "axon": "^2.0.1",
+    "express": "^4.12.3",
+    "redis": "^0.12.1",
+    "underscore": "^1.8.2"
+  }
+}
