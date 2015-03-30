@@ -12,7 +12,7 @@ exports.save = function (req, res, next) {
   var badges = _.clone(req.body);
 
   model.save(badges, function (err) {
-    if (err) return res.json(503, {error: true});
+    if (err) return res.status(503).json({error: true});
 
     // go to the next middleware
     next();
@@ -30,8 +30,8 @@ exports.send = function (req, res, next) {
 
   // send
   model.send(badges, function (err) {
-    if (err) return res.json(503, {error: true});
-    res.json(200, { error: null });
+    if (err) return res.status(503).json({error: true});
+    res.status(200).json({ error: null });
   });
 
   next();
@@ -43,7 +43,7 @@ exports.send = function (req, res, next) {
  */
 exports.get = function (req, res) {
   model.get(function (err, data) {
-    if (err) return res.json(503, { error: true });
-    res.json(200, data);
+    if (err) return res.status(503).json({ error: true });
+    res.status(200).json(data);
   });
 };
