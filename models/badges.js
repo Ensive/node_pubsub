@@ -8,6 +8,17 @@ var redis = require('../lib/redis');
  * @param {Function} callback
  */
 exports.save = function (badges, callback) {
+  // if no data
+  if (!badges.length) return callback(null, null);
 
+  var badge = badges.pop();
+
+  // insert data
+  redis.lpush('badges', JSON.stringify(badge), function (err) {
+
+    if (err) return callback(err, null);
+    exports.save(badges, callback);
+
+  });
 };
 

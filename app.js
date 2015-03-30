@@ -1,5 +1,6 @@
 'use strict';
 
+// define the main modules
 var
   express = require('express'),
   bodyParser = require('body-parser'),
@@ -12,7 +13,7 @@ var app = express();
 app.use(bodyParser.json());
 
 app.post('/', badges.save, badges.send, function (req, res) {
-  res.send('Hello world!\n');
+  res.send('\nDone\n\n');
   res.render('dashboard');
 });
 
