@@ -37,9 +37,6 @@ exports.trim = function () {
  * @param {Function} callback
  */
 exports.send = function (badges, callback) {
-  //badges.forEach(function (badge) {
-  //  broadcast.send(badge);
-  //});
 
   // iterate through badges array
   badges.forEach(broadcast.send);

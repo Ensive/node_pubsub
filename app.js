@@ -12,10 +12,7 @@ var app = express();
 // declare a middleware
 app.use(bodyParser.json());
 
-app.post('/', badges.save, badges.send, function (req, res) {
-  res.send('\nDone\n\n');
-  res.render('dashboard');
-});
+app.post('/', badges.save, badges.send);
 
 app.get('/badges', badges.get);
 
